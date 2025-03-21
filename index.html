@@ -1,12 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo Lists</title>
+    <title>Todo List with Drag & Drop</title>
+
+    <!-- Dragula CSS & JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      .dragging {
+        opacity: 0.6;
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+      }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+  <body class="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-xl shadow-xl p-8">
+        <!-- Header -->
+        <header class="flex items-center gap-3 mb-8">
+          <i data-lucide="list-todo" class="size-8 text-purple-600"></i>
+          <h1 class="text-3xl font-bold text-gray-800">ToDo Lists</h1>
+        </header>
+
+        <!-- Task Form -->
+        <form id="taskForm" class="mb-8">
+          <div class="flex gap-4">
+            <input
+              id="taskInput"
+              type="text"
+              placeholder="Add a new task..."
+              class="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            />
+            <button
+              type="submit"
+              class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2"
+            >
+              <i data-lucide="plus-circle"></i>
+              Add Task
+            </button>
+          </div>
+        </form>
+
+        <!-- Sections -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Pending Tasks -->
+          <div>
+            <h2 class="text-lg font-semibold">Pending</h2>
+            <div
+              id="pendingTasks"
+              class="p-4 bg-gray-200 min-h-[100px] rounded space-y-2"
+            ></div>
+          </div>
+
+          <!-- Done Tasks -->
+          <div>
+            <h2 class="text-lg font-semibold">Done</h2>
+            <div
+              id="doneTasks"
+              class="p-4 bg-green-200 min-h-[100px] rounded space-y-2"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js" async></script>
   </body>
 </html>

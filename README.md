@@ -1,6 +1,6 @@
 # Task Manager
 
-A beautiful and intuitive task management application built with React, TypeScript, and Tailwind CSS. Features drag-and-drop functionality for task status management and persistent storage.
+A beautiful and intuitive task management application built with HTML, Vanilla JS, and Tailwind CSS. Features drag-and-drop functionality for task status management and persistent storage.
 
 ![Task Manager Preview](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=2072)
 
@@ -16,19 +16,14 @@ A beautiful and intuitive task management application built with React, TypeScri
 
 ## Tech Stack
 
-- React 19
-- TypeScript
+- HTML
 - Tailwind CSS
+- Javacript
 - Dragula (for drag-and-drop)
-- Lucide React (for icons)
-- Vite (for development and building)
+- Lucide (for icons)
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
 
 ### Installation
 
@@ -38,9 +33,9 @@ git clone https://github.com/avi074/ToDo-Dragula.git
 cd ToDo-Dragula
 ```
 
-2. Install dependencies:
+2. Checkout the new clean branch
 ```bash
-npm install
+git checkout vanilla-js
 ```
 
 3. Start the development server:
@@ -65,18 +60,13 @@ The application will be available at `http://localhost:5173`
    - Tasks are automatically saved to localStorage
    - Your tasks persist between browser sessions
    - Drag tasks between sections to update their status
+   - Delete tasks & remove it from localStorage
 
 ## Project Structure
 
 ```
-src/
-├── components/
-│   ├── Header.tsx        # App header with logo
-│   ├── TaskInput.tsx     # Task input form
-│   └── TaskSection.tsx   # Task list section (Pending/Done)
-├── types.ts              # TypeScript interfaces
-├── App.tsx              # Main application component
-└── main.tsx            # Application entry point
+index.html : Frontend File
+script.js  : Script File
 ```
 
 ## Building for Production
