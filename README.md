@@ -38,12 +38,9 @@ cd ToDo-Dragula
 git checkout vanilla-js
 ```
 
-3. Start the development server:
-```bash
-npm run dev
-```
+3. Open index.html in the browser or on live server in vscode
 
-The application will be available at `http://localhost:5173`
+The application will be available at `http://localhost:5500/index.html`
 
 ## Usage
 
